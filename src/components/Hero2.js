@@ -1,19 +1,44 @@
-import React, { useEffect } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
+import { Button, Container, Modal } from "react-bootstrap";
 import Vector from "./Images/vector.jpg";
-import Icona from "./Images/icon1.gif";
-import Iconb from "./Images/icon2.gif";
-import Iconc from "./Images/icon3.gif";
-import Icond from "./Images/icon4.gif";
-import Icone from "./Images/icon5.gif";
-import Iconf from "./Images/icon6.gif";
-import Icong from "./Images/icon7.gif";
-import Iconh from "./Images/icon8.gif";
+import Icona from "./Images/hotel1.gif";
+import Iconb from "./Images/hotel2.gif";
+import Iconc from "./Images/hotel3.gif";
+import Icond from "./Images/hotel4.gif";
+import Icone from "./Images/hotel5.gif";
+import Iconf from "./Images/hotel6.gif";
+import Icong from "./Images/hotel7.gif";
+import Iconh from "./Images/hotel8.gif";
 import Hotel from "./Images/villa1.gif";
 import Hotelb from "./Images/villa2.gif";
 
+import Iconi from "./Images/vila1.gif";
+import Iconj from "./Images/vila2.gif";
+import Iconk from "./Images/vila3.gif";
+import Iconl from "./Images/vila4.gif";
+import Iconm from "./Images/vila5.gif";
+import Iconn from "./Images/vila6.gif";
+import Icono from "./Images/vila7.gif";
+import Iconp from "./Images/vila8.gif";
+import Fasa from "./Images/fas1.jpeg";
+import Fasb from "./Images/fas2.png";
+import Fasc from "./Images/fas3.jpg";
+import Fasd from "./Images/fas4.jpg";
+import Fase from "./Images/fas5.jpg";
+import Fasf from "./Images/fas6.jpg";
+import Fasg from "./Images/fas7.jpg";
+import Fash from "./Images/fas8.jpg";
+
 const Hero2 = ({ change, setChange }) => {
-const changeSize = () => {
+  const [show, setShow] = useState(false);
+  const [hotel, setHotel] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleCloseHotel = () => setHotel(false);
+  const handleShow = () => setShow(true);
+  const handleHotel = () => setHotel(true);
+
+  const changeSize = () => {
     if (window.innerWidth <= 850) {
       setChange(true);
     } else {
@@ -49,12 +74,12 @@ const changeSize = () => {
                 }
               >
                 {" "}
-                <div className=" mx-3 px-2 py-4 ">
+                <div className=" mx-3 px-2 py-4 d-flex align-items-center  h-100 ">
                   <h1>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Fugiat et dolores soluta obcaecati, cupiditate suscipit
-                    consectetur reprehenderit ipsa distinctio perspiciatis velit
-                    id sint est fuga numquam iure quisquam ad excepturi?
+                    in this hotel near the sea and there are ATVs, ATV is a way
+                    to enjoy the beach in a modern way. By riding an ATV, we can
+                    go on an adventure along the beach and see the beauty of the
+                    sea
                   </h1>
                 </div>
               </div>
@@ -68,48 +93,52 @@ const changeSize = () => {
                 </div>
                 <div>
                   {" "}
-                  <div className="text-center">
-                    <h2>Fasilitas Hotel 1</h2>
+                  <div className="text-center pt-2">
+                    <h4>Fasilitas Hotel 1</h4>
                     <h3>12 pax 5 Room</h3>
                   </div>
                   <div className=" mx-3 px-2 py-4 d-flex justify-content-center">
                     <div className="d-flex flex-column text-center">
                       <img src={Icona} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>gym</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Iconb} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>view</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Iconc} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>mosque</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Icond} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>vehicle</h4>
                     </div>
                   </div>
                   <div className=" mx-3 px-2 py-4 d-flex justify-content-center">
                     <div className="d-flex flex-column text-center">
                       <img src={Icone} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>theater</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Iconf} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>bike</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Icong} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>duplicator</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Iconh} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>pool</h4>
                     </div>
                   </div>
                   <div className="d-flex justify-content-center mx-3">
-                    <Button className="w-100 bg-success" size="lg">
+                    <Button
+                      className="w-100 bg-success mx-2"
+                      size="lg"
+                      onClick={handleShow}
+                    >
                       {" "}
                       View Room{" "}
                     </Button>
@@ -120,48 +149,52 @@ const changeSize = () => {
               <div className="d-flex">
                 <div className="w-50 me-3">
                   {" "}
-                  <div className="text-center">
+                  <div className="text-center mt-2">
                     <h2>Fasilitas Hotel 1</h2>
                     <h3>12 pax 5 Room</h3>
                   </div>
                   <div className=" mx-3 px-2 py-4 d-flex justify-content-between">
                     <div className="d-flex flex-column text-center">
                       <img src={Icona} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>gym</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Iconb} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>view</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Iconc} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>mosque</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Icond} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>vehicle</h4>
                     </div>
                   </div>
                   <div className=" mx-3 px-2 py-4 d-flex justify-content-between">
                     <div className="d-flex flex-column text-center">
                       <img src={Icone} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>theater</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Iconf} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>bike</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Icong} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>duplicator</h4>
                     </div>
                     <div className="d-flex flex-column text-center">
                       <img src={Iconh} alt="" width="90px" />
-                      <span>Disabil walk</span>
+                      <h4>pool</h4>
                     </div>
                   </div>
                   <div className="d-flex justify-content-center px-3">
-                    <Button className="w-100 bg-success " size="lg">
+                    <Button
+                      className="w-100 bg-success "
+                      size="lg"
+                      onClick={handleShow}
+                    >
                       {" "}
                       View Room{" "}
                     </Button>
@@ -206,20 +239,20 @@ const changeSize = () => {
                   }
                 >
                   <div className="d-flex flex-column text-center">
-                    <i class="fa-solid fa-mug-hot fawe" />
-                    <h2>Cafe</h2>
+                    <img src={Iconi} alt="" width="90px" />
+                    <h4>Mosque</h4>
                   </div>
                   <div className="d-flex flex-column text-center">
-                    <i class="fa-solid fa-bath fawe" />
-                    <h2>Bath</h2>
+                    <img src={Iconj} alt="" width="90px" />
+                    <h4>waiters</h4>
                   </div>
                   <div className="d-flex flex-column text-center">
-                    <i class="fa-solid fa-school fawe" />
-                    <h2>school</h2>
+                    <img src={Iconk} alt="" width="90px" className="fawe" />
+                    <h4>Wifi</h4>
                   </div>
                   <div className="d-flex flex-column text-center">
-                    <i class="fa-solid fa-hospital fawe" />
-                    <h2>Hospital</h2>
+                    <img src={Iconl} alt="" width="90px" />
+                    <h4>School</h4>
                   </div>
                 </div>
                 <div
@@ -230,25 +263,29 @@ const changeSize = () => {
                   }
                 >
                   <div className="d-flex flex-column text-center">
-                    <i class="fa-solid fa-film fawe" />
-                    <h2>Bioscop</h2>
+                    <img src={Iconm} alt="" width="90px" />
+                    <h4>Church</h4>
                   </div>
                   <div className="d-flex flex-column text-center">
-                    <i class="fa-solid fa-mountain-sun fawe"></i>
-                    <h2>View</h2>
+                    <img src={Iconn} alt="" width="90px" />
+                    <h4>Theater</h4>
                   </div>
 
                   <div className="d-flex flex-column text-center">
-                    <i class="fa-sharp fa-solid fa-train fawe"></i>
-                    <h2>Station</h2>
+                    <img src={Icono} alt="" width="90px" />
+                    <h4>View</h4>
                   </div>
                   <div className="d-flex flex-column text-center">
-                    <i class="fa-solid fa-headphones-simple fawe"></i>
-                    <h2>karaoke</h2>
+                    <img src={Iconp} alt="" width="90px" />
+                    <h4>Pool</h4>
                   </div>
                 </div>
                 <div className="d-flex justify-content-center">
-                  <Button className="w-100 bg-success " size="lg">
+                  <Button
+                    className="w-100 bg-success mx-2 "
+                    size="lg"
+                    onClick={handleHotel}
+                  >
                     {" "}
                     View Room{" "}
                   </Button>
@@ -257,6 +294,130 @@ const changeSize = () => {
             </div>
           </div>
         </Container>
+        <Modal show={show} onHide={handleClose} className=" ">
+          <Modal.Header closeButton>
+            <Modal.Title>Room in Hotel 1</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="">
+            <div>
+              <div className="d-flex justify-content-between">
+                <img
+                  src={Fasa}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+                <img
+                  src={Fasb}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+              </div>
+              <div className="d-flex justify-content-between mt-2">
+                <img
+                  src={Fasc}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+                <img src={Fasd} alt="" width={change ? "150px" : "200px"} />
+              </div>
+            </div>
+            <div>
+              <div className="d-flex justify-content-between mt-2">
+                <img
+                  src={Fase}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+                <img
+                  src={Fasf}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+              </div>
+              <div className="d-flex justify-content-between mt-2">
+                <img
+                  src={Fasg}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+                <img
+                  src={Fash}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal>
+        <Modal show={hotel} onHide={handleCloseHotel} className=" ">
+          <Modal.Header closeButton>
+            <Modal.Title>Room in Hotel 1</Modal.Title>
+          </Modal.Header>
+          <Modal.Body className="">
+            <div>
+              <div className="d-flex justify-content-between">
+                <img
+                  src={Fasa}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+                <img
+                  src={Fasb}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+              </div>
+              <div className="d-flex justify-content-between mt-2">
+                <img
+                  src={Fasc}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+                <img src={Fasd} alt="" width={change ? "150px" : "200px"} />
+              </div>
+            </div>
+            <div>
+              <div className="d-flex justify-content-between mt-2">
+                <img
+                  src={Fase}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+                <img
+                  src={Fasf}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+              </div>
+              <div className="d-flex justify-content-between mt-2">
+                <img
+                  src={Fasg}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+                <img
+                  src={Fash}
+                  alt=""
+                  width={change ? "150px" : "200px"}
+                  height="100px"
+                />
+              </div>
+            </div>
+          </Modal.Body>
+        </Modal>
       </div>
     </div>
   );

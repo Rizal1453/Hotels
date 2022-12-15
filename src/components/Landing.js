@@ -1,5 +1,4 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button } from "react-bootstrap";
 
 const Landing = () => {
@@ -13,7 +12,7 @@ const Landing = () => {
         ENJOY WITH YOUR LOVE FRIENDS AND FAMILY
       </h1>
       <Button variant="outline-light" className="px-5 mt-5">
-        ORDER KAMAAAR ANDAAAA
+        ORDER YOUR ROOM
       </Button>
     </div>
   );

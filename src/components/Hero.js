@@ -1,12 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect} from "react";
 import NavbarComponent from "./NavbarComponent";
 import HeroImage from "./Images/hero2.jpg";
 import { Button, Container, FloatingLabel, Form } from "react-bootstrap";
-import ReactAudioPlayer from "react-audio-player";
-import exampleMusic from "../music/oke.mp3";
 
 const Hero = ({ change, setChange }) => {
-  const [play, setPlay] = useState(true);
   const changeSize = () => {
     if (window.innerWidth <= 850) {
       setChange(true);
@@ -14,28 +11,17 @@ const Hero = ({ change, setChange }) => {
       setChange(false);
     }
   };
-  const music = () => {
-    return (
-      <div>
-        <ReactAudioPlayer src="oke.mp3" autoPlay="true" />
-      </div>
-    );
-  };
+
   useEffect(() => {
     changeSize();
-    music();
   }, []);
   window.addEventListener("resize", changeSize);
   return (
     <div className="myBG">
-      <music />
-      <audio autoplay>
-        <source src={exampleMusic} type="audio/mpeg" />
-      </audio>
       <img src={HeroImage} alt="" className="img-hero" />
       <Container>
         <NavbarComponent />
-        <div className={change ? "" : "d-flex align-items-between"}>
+        <div className={change ? "" : "d-flex justify-content-between "}>
           <div
             className={
               change

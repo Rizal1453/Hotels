@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
+import { Container, Navbar } from "react-bootstrap";
 
 const NavbarComponent = () => {
   return (
@@ -9,7 +9,7 @@ const NavbarComponent = () => {
           href="#home"
           className="fs-1 fw-semibold fst-italic text-light"
         >
-          Rizal Travel <i class="fab fa-typo3" />
+          Rizal Hotel <i class="fab fa-typo3" />
         </Navbar.Brand>
         <Navbar.Collapse id="responsive-navbar-nav"></Navbar.Collapse>
       </Container>
