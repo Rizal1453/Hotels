@@ -358,7 +358,7 @@ const Hero2 = ({ change, setChange }) => {
         </Modal>
         <Modal show={hotel} onHide={handleCloseHotel} className=" ">
           <Modal.Header closeButton>
-            <Modal.Title>Room in Hotel 1</Modal.Title>
+            <Modal.Title>Room in Hotel 2</Modal.Title>
           </Modal.Header>
           <Modal.Body className="">
             <div>
